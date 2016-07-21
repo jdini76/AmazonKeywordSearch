@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+	<suite name="PRF" parallel="false">
+	
+	 <test name="PRF">
+	    <classes>
+	  		<class name="prf.tests.Utils"/>
+	  		<class name="prf.tests.Search"/>
+	        
+	    </classes>
+	  </test>
+	</suite>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+    <line>
+      <![CDATA[Default test_07212016145115.png]]>
+    </line>
+    <line>
+      <![CDATA[Default test_07212016145119.png]]>
+    </line>
+    <line>
+      <![CDATA[Default test_07212016145123.png]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="24204" started-at="2016-07-21T18:51:01Z" finished-at="2016-07-21T18:51:25Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="24204" started-at="2016-07-21T18:51:01Z" finished-at="2016-07-21T18:51:25Z">
+      <class name="prf.tests.Search">
+        <test-method status="PASS" signature="StartWebDriverandLogin()[pri:0, instance:prf.tests.Search@28fea41a]" name="StartWebDriverandLogin" is-config="true" duration-ms="8043" started-at="2016-07-21T14:51:01Z" finished-at="2016-07-21T14:51:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StartWebDriverandLogin -->
+        <test-method status="PASS" signature="find_book_with_keyword_search(java.lang.String, java.lang.String)[pri:0, instance:prf.tests.Search@28fea41a]" name="find_book_with_keyword_search" duration-ms="5886" started-at="2016-07-21T14:51:09Z" data-provider="BookKeyword" finished-at="2016-07-21T14:51:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[B01531YHYU]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Action Adventure]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- find_book_with_keyword_search -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:prf.tests.Search@28fea41a]" name="tearDown" is-config="true" duration-ms="545" started-at="2016-07-21T14:51:15Z" finished-at="2016-07-21T14:51:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4b10d0f2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Default test_07212016145115.png]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="find_book_with_keyword_search(java.lang.String, java.lang.String)[pri:0, instance:prf.tests.Search@28fea41a]" name="find_book_with_keyword_search" duration-ms="3435" started-at="2016-07-21T14:51:15Z" data-provider="BookKeyword" finished-at="2016-07-21T14:51:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[B01531YHYU]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Time Travel Action Adventure]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- find_book_with_keyword_search -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:prf.tests.Search@28fea41a]" name="tearDown" is-config="true" duration-ms="498" started-at="2016-07-21T14:51:19Z" finished-at="2016-07-21T14:51:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4b10d0f2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Default test_07212016145119.png]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="find_book_with_keyword_search(java.lang.String, java.lang.String)[pri:0, instance:prf.tests.Search@28fea41a]" name="find_book_with_keyword_search" duration-ms="3693" started-at="2016-07-21T14:51:19Z" data-provider="BookKeyword" finished-at="2016-07-21T14:51:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[B01531YHYU]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Science Fiction Action Adventure]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- find_book_with_keyword_search -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:prf.tests.Search@28fea41a]" name="tearDown" is-config="true" duration-ms="426" started-at="2016-07-21T14:51:23Z" finished-at="2016-07-21T14:51:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4b10d0f2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Default test_07212016145123.png]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="CloseWebdriver()[pri:0, instance:prf.tests.Search@28fea41a]" name="CloseWebdriver" is-config="true" duration-ms="1643" started-at="2016-07-21T14:51:23Z" finished-at="2016-07-21T14:51:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseWebdriver -->
+      </class> <!-- prf.tests.Search -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

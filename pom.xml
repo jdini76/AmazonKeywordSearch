@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>PRF</groupId>
+  <artifactId>PRF</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+   <build>
+     <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.7</source>
+		  <target>1.7</target>
+		  <compilerVersion>1.7</compilerVersion>
+		  <encoding>ISO-8859-1</encoding>
+		</configuration>
+      </plugin>
+    <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.14.1</version>
+				<configuration>
+					<forkMode>never</forkMode>
+						<groups>${groups}</groups>
+        			<suiteXmlFiles>
+                       <suiteXmlFile>AllTests.xml</suiteXmlFile>
+                 	</suiteXmlFiles>
+                   
+                 	</configuration>
+			</plugin>
+    </plugins>
+    </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.seleniumhq.selenium</groupId>
+  		<artifactId>selenium-java</artifactId>
+  		<version>2.50.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.testng</groupId>
+  		<artifactId>testng</artifactId>
+  		<version>6.9.10</version>
+  	</dependency>
+  </dependencies>
+</project>
