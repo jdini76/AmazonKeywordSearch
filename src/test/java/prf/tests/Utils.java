@@ -19,6 +19,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 
+import framework.ExcelUtils;
 import prf.tests.Utils;
 
 public class Utils {
@@ -28,14 +29,7 @@ public class Utils {
 	static DateFormat df = new SimpleDateFormat("MMddyyyyHHmmss");
 	
 	
-	@DataProvider(name = "BookKeyword")
-	public Object[][] createData1(){
-		return new Object[][]{
-			{"B01531YHYU","Action Adventure"},
-			{"B01531YHYU","Time Travel Action Adventure"},
-			{"B01531YHYU","Science Fiction Action Adventure"}
-			};
-	}
+	
 	@BeforeClass(alwaysRun = true)
 	public static void StartWebDriverandLogin() throws Exception {
 		

@@ -25,7 +25,9 @@
         			<suiteXmlFiles>
                        <suiteXmlFile>AllTests.xml</suiteXmlFile>
                  	</suiteXmlFiles>
-                   
+                    <systemPropertyVariables>
+                    	<fileName>${fileName}</fileName>
+        			</systemPropertyVariables>
                  	</configuration>
 			</plugin>
     </plugins>
@@ -40,6 +42,16 @@
   		<groupId>org.testng</groupId>
   		<artifactId>testng</artifactId>
   		<version>6.9.10</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi</artifactId>
+  		<version>3.13</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi-ooxml</artifactId>
+  		<version>3.13</version>
   	</dependency>
   </dependencies>
 </project>
