@@ -47,7 +47,8 @@ public class Utils {
 	@AfterMethod(alwaysRun = true)
 	public void tearDown(ITestContext result) throws Exception{
 		takeScreenShot(result.getName(),"Pass");
-		
+		Driver.quit();
+		StartWebDriverandLogin();
 	}
 	
 	@AfterClass(alwaysRun = true)
