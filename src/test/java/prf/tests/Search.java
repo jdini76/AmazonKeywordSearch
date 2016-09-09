@@ -23,7 +23,7 @@ public class Search extends Utils{
 		Driver.findElement(By.id("twotabsearchtextbox")).clear();
 		Driver.findElement(By.id("twotabsearchtextbox")).sendKeys(Keyword);
 		Driver.findElement(By.cssSelector("#nav-search > form > div.nav-right > div > input")).click();
-		WebDriverWait wait = new WebDriverWait(Driver, 10);
+		WebDriverWait wait = new WebDriverWait(Driver, 15);
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("s-results-list-atf")));
 		int l = 0;
 		int r = 1;
@@ -59,7 +59,7 @@ public class Search extends Utils{
 //					System.out.print(intPage +".");	
 //					r++;
 //					}
-								
+				wait.until(ExpectedConditions.elementToBeClickable(By.id("pagnNextString")));				
 				Driver.findElement(By.id("pagnNextString")).click();
 				wait.until(ExpectedConditions.elementToBeClickable(By.id("s-results-list-atf")));
 				intPage++;	
@@ -69,23 +69,6 @@ public class Search extends Utils{
 			}
 		
 	}
-	@DataProvider(name="Keyword")
 	
-	public Object[][] bookKeyword() throws Exception{
-//		return new Object[][]{
-//			{"Action Adventure"},
-//			{"Time Travel Action Adventure"},
-//			{"Science Fiction Action Adventure"}
-//			};
-		String fileName;
-		fileName = System.getProperty("fileName","C:\\Users\\dinicjo\\workspace\\PRF\\src\\test\\java\\testData\\PRF_Keywords.xlsx");
-		
-		
-		Object[][] testObjArray = ExcelUtils.getTableArray(fileName, "Sheet1");
-		return (testObjArray);
-		
-		
-		
-	}
 	
 }

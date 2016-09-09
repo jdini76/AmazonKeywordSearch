@@ -28,7 +28,24 @@ public class Utils {
 	protected static String UrlSit = System.getProperty("url", "https://www.amazon.com/Kindle-eBooks/b?ie=UTF8&node=154606011");
 	static DateFormat df = new SimpleDateFormat("MMddyyyyHHmmss");
 	
+@DataProvider(name="Keyword")
 	
+	public Object[][] bookKeyword() throws Exception{
+//		return new Object[][]{
+//			{"Action Adventure"},
+//			{"Time Travel Action Adventure"},
+//			{"Science Fiction Action Adventure"}
+//			};
+		String fileName;
+		fileName = System.getProperty("fileName","C:\\Users\\dinicjo\\workspace\\AmazonKeywordSearch\\src\\test\\java\\testData\\HFHS_Keywords.xlsx");
+		
+		
+		Object[][] testObjArray = ExcelUtils.getTableArray(fileName, "Sheet1");
+		return (testObjArray);
+		
+		
+		
+	}
 	
 	@BeforeClass(alwaysRun = true)
 	public static void StartWebDriverandLogin() throws Exception {
