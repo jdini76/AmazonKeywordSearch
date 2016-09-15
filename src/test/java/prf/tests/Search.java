@@ -21,7 +21,7 @@ public class Search extends Utils{
 	@Test(dataProvider="Keyword")
 	public void find_book_with_keyword_search(String ASIN,String Title,String Keyword){
 		Driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		System.out.println("Searching: " + Keyword + " for "+ Title);
+		System.out.println("Searching: '" + Keyword + "' for "+ Title);
 		String sResults = "false";
 		Driver.findElement(By.id("twotabsearchtextbox")).clear();
 		Driver.findElement(By.id("twotabsearchtextbox")).sendKeys(Keyword);
@@ -37,7 +37,16 @@ public class Search extends Utils{
 			
 				for (int i=0;i<=15;i++)
 				{
-				
+//					if (r == 100){
+//						String strCurrentURL = Driver.getCurrentUrl();
+//						//Driver.quit();
+//						Driver.close();
+//						Utils.StartWebDriverandLogin();
+//						Driver.navigate().to(strCurrentURL);
+//						r =1;
+//						System.out.println("Restarted webDriver at page: " + intPage );
+//						Reporter.log("Restarted webDriver at page: " + intPage );
+//					}
 					String sValue = null;
 					WebElement element = Driver.findElement(By.cssSelector("#result_" + l));
 					sValue = Driver.findElement(By.cssSelector("#result_" + l)).getAttribute("data-asin");
@@ -50,7 +59,13 @@ public class Search extends Utils{
 						Reporter.log(Title + " found on page:" + intPage +" line "+ (i+1));
 						sResults = "true";		
 			       
+					}else if(intPage == 400)
+					{
+						System.out.println("The process checked " + intPage+" pages containing "+ l +" books and "+Title + " was not found. Keep at it though!");
+						Reporter.log("The process checked " + intPage+" pages containing "+ l +" books and "+Title + " was not found. Keep at it though!");
+						sResults = "true";
 					}
+					
 					l++;
 				}
 				if (sResults.equals("false")){
@@ -66,15 +81,16 @@ public class Search extends Utils{
 					wait.until(ExpectedConditions.elementToBeClickable(By.id("pagnNextString")));				
 					Driver.findElement(By.id("pagnNextString")).click();
 					wait.until(ExpectedConditions.elementToBeClickable(By.id("s-results-list-atf")));
-					intPage++;	
+					intPage++;
+					r++;
 				}
 			
 			
 				}
 		}catch(Exception e)
 		{
-				System.out.println("The process failed on page: " + intPage +" while searching keyword: " +Keyword + " for title: " + Title);
-				Reporter.log("The process failed on page: " + intPage +" while searching keyword: " +Keyword + " for title: " + Title);
+				System.out.println("The process failed on page: " + intPage +" while searching keyword: " +Keyword + " for title: " + Title + e.toString());
+				Reporter.log("The process failed on page: " + intPage +" while searching keyword: '" +Keyword + "' for title: " + Title);
 		}
 		
 	}

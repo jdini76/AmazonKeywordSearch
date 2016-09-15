@@ -7,6 +7,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+
+import javax.imageio.ImageIO;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -18,6 +21,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.screentaker.ViewportPastingStrategy;
 
 import framework.ExcelUtils;
 import prf.tests.Utils;
@@ -37,7 +43,7 @@ public class Utils {
 //			{"Science Fiction Action Adventure"}
 //			};
 		String fileName;
-		fileName = System.getProperty("fileName","C:\\Users\\dinicjo\\workspace\\AmazonKeywordSearch\\src\\test\\java\\testData\\HFHS_Keywords.xlsx");
+		fileName = System.getProperty("fileName","C:\\Users\\dinicjo\\workspace\\AmazonKeywordSearch\\src\\test\\java\\testData\\PRF_Keywords.xlsx");
 		
 		
 		Object[][] testObjArray = ExcelUtils.getTableArray(fileName, "Sheet1");
@@ -73,13 +79,21 @@ public class Utils {
 		Driver.quit();
 	}
 	public static void takeScreenShot(String string,String status) throws IOException { 
+		
 		Date today = Calendar.getInstance().getTime();
 		String filename = string + "_" + df.format(today) +".png";
-		File scrFile = ((TakesScreenshot)Driver).getScreenshotAs(OutputType.FILE);
+//		File scrFile = ((TakesScreenshot)Driver).getScreenshotAs(OutputType.FILE);
 		String path = getPath((filename), status);
-		FileUtils.copyFile(scrFile, new File(path)); 
-		path = getURLPath(filename, status);
-		Reporter.log(path);
+//		FileUtils.copyFile(scrFile, new File(path)); 
+//		path = getURLPath(filename, status);
+		//take the screenshot of the entire home page and save it to a png file
+		Screenshot screenshot = new AShot().shootingStrategy(new ViewportPastingStrategy(1000)).takeScreenshot(Driver);
+		ImageIO.write(screenshot.getImage(), "PNG", new File(path));
+		Utils.printLine(path);
+		Reporter.log(path);		
+
+
+		
 	}
 
 
@@ -121,7 +135,7 @@ public class Utils {
 			
 		}
 		newFileNamePath = directory.getCanonicalPath() + "\\test-output\\screenshots\\" + strBuildFolder +"\\"+ nameTest;
-		Utils.printLine(newFileNamePath);;
+		Utils.printLine(newFileNamePath);
 	
 		//String newFileNamePath = "//test-output\\screenshots\\" + strBuildFolder +"\\"+ nameTest;
 		//String newFileNamePath = directory.getCanonicalPath() + "\\test-output\\screenshots\\" + strBuildFolder +"\\"+ nameTest;
